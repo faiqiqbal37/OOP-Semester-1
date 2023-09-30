@@ -8,7 +8,6 @@
 *     with static factory methods valueOf()
 */
 
-package sheffield;
 
 import java.io.*;
 

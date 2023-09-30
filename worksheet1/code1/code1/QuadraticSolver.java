@@ -5,6 +5,7 @@
  */
 
 import java.math.*;
+import sheffield.*;
 
 /**
 * QuadraticSolver.java
@@ -24,7 +25,19 @@ public class QuadraticSolver {
 	int aInt = 1, bInt = 2000000, cInt = 1;
 	double aFloat = 1, bFloat = 2000000, cFloat = 1;
 
-	// declare variables to store the two values of x that satisfy the equation
+	// defining a KeyboardInput object to take input
+
+	EasyReader keyboard = new EasyReader();
+
+		aFloat = keyboard.readDouble("Input a value for a: ");
+		bFloat = keyboard.readDouble("Input a value for b: ");
+		cFloat = keyboard.readDouble("Input a value for c: ");
+
+		System.out.println("You entered a=" + aFloat + ", b=" + bFloat + ", c=" + cFloat);
+
+
+
+		// declare variables to store the two values of x that satisfy the equation
 	double x1, x2, temp1, temp2;
 
 	// work out the solution with int types
