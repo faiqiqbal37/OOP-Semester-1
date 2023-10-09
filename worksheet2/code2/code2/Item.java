@@ -20,6 +20,14 @@ public class Item {
 	return price;
     }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     // using ukp to denote pounds sterling as unicode pound symbol
     // does not display properly in MS Command Window
     public String toString() {
@@ -27,18 +35,8 @@ public class Item {
     }
 
     // instance fields
-    private final double price;
-    private final String name;
+    private double price;
+    private String name;
     
-    public static void main (String[] args) {
-	String TESTNAME = "testObject";
-	double TESTPRICE = 10.0;
-	Item testObject = new Item(TESTNAME,TESTPRICE);
-	System.out.println("Name:");
-	System.out.println("Actual field " + testObject.getName());
-	System.out.println("Expected " + TESTNAME);
-	System.out.println("Price:");
-	System.out.println("Actual field " + testObject.getPrice());
-	System.out.println("Expected " + TESTPRICE);
-    }
+
 }

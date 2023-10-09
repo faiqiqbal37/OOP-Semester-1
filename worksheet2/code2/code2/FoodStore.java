@@ -24,6 +24,22 @@ public class FoodStore {
 	amountStored = a;
 	amountDeposited = 0;
 	amountWithdrawn = 0;
+    countOfDeposits = 0;
+    countOfWithdrawls = 0;
+    }
+
+    public boolean equals(FoodStore obj){
+        if(obj == null){
+            return false;
+        }
+        else if (this == obj){
+            return true;
+        }
+        else if (this.getClass() != obj.getClass()){
+            return false;
+        }else{
+            return false;
+        }
     }
 
     // these are class methods, which enable the value of the instance
@@ -34,10 +50,12 @@ public class FoodStore {
     public void depositFood(int amountToDeposit) {
 	amountStored = amountStored + amountToDeposit;
 	amountDeposited += amountToDeposit;
+    incrementDeposits();
     }
     public void withdrawFood(int amountToWithdraw) {
 	amountStored = amountStored - amountToWithdraw;
 	amountWithdrawn += amountToWithdraw;
+    incrementWithdrawls();
     }
 
     // these are accessor methods, which return the value of the instance field
@@ -45,9 +63,33 @@ public class FoodStore {
 	return(amountStored);
     }
 
+    public int getCountOfWithdrawls() {
+        return countOfWithdrawls;
+    }
+
+    public void setCountOfWithdrawls(int countOfWithdrawls) {
+        this.countOfWithdrawls = countOfWithdrawls;
+    }
+
+    public void incrementDeposits(){
+        this.countOfDeposits++;
+    }
+
+    public void incrementWithdrawls(){
+        this.countOfWithdrawls++;
+    }
+
+    public int getCountOfDeposits() {
+        return countOfDeposits;
+    }
+
+    public void setCountOfDeposits(int countOfDeposits) {
+        this.countOfDeposits = countOfDeposits;
+    }
+
     public String toString () {
 	return ("AmountStored = " + amountStored + " AmountDeposited = "
-		+ amountDeposited + " AmountWithdrawn = " + amountWithdrawn);
+		+ amountDeposited + " AmountWithdrawn = " + amountWithdrawn + " Total Number of Withdraws: " + countOfWithdrawls + " Total Number of Deposits: " + countOfDeposits);
     }
 
     // this is the instance field, which is an attribute associated with
@@ -60,5 +102,9 @@ public class FoodStore {
     private int amountStored;
     private int amountDeposited;
     private int amountWithdrawn;
+
+    private int countOfWithdrawls;
+
+    private int countOfDeposits;
 
 }
